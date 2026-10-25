@@ -12,6 +12,9 @@ A step-by-step walkthrough of building a simple AI coding agent with the OpenAI 
 | `step2.py` | An interactive chat loop. The conversation history is kept in a `messages` list so the model remembers earlier turns. Type `exit` or `quit` to stop. |
 | `step3.py` | Tool calling. The model gets one tool, `read_file`, and is asked to summarize `notes.txt`. The script loops until the model stops calling tools and gives a final answer. |
 | `agent.py` | The full agent. An interactive terminal assistant with four tools: `list_files`, `read_file`, `write_file` and `run_command`. Shell commands ask for `y/n` confirmation before they run. |
+| `notes.txt` | Sample file that `step3.py` asks the model to summarize. |
+| `requirements.txt` | Python dependencies. |
+| `.env.example` | Template for the `.env` file that holds your API key. |
 
 ## How the agent loop works
 
@@ -26,10 +29,14 @@ Requires Python 3.9+.
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-pip install openai python-dotenv
+pip install -r requirements.txt
 ```
 
-Create a `.env` file in the project root with your API key:
+Copy the example env file and add your API key:
+
+```bash
+cp .env.example .env
+```
 
 ```
 OPENAI_API_KEY=sk-...
