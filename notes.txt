@@ -1,0 +1,6 @@
+Project notes - agent playground
+
+- An agent is an LLM connected to tools in a loop.
+- The model decides when to call a tool; our code runs it and sends back the result.
+- The loop ends when the model replies without any tool calls.
+- Next ideas: truncate long tool output, confirm file writes, add a search tool.
